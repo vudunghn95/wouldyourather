@@ -1,0 +1,43 @@
+.ant-card {
+  width: 450px;
+  margin-top: 30px;
+  display: block;
+}
+.ant-card-head {
+  background-color: azure;
+}
+.ant-card-head-wrapper {
+  display: block;
+}
+.ant-card-extra {
+  padding: 0;
+}
+.ant-card-body > img {
+  width: 200px;
+  object-fit: cover;
+}
+.ant-card-body > h3 {
+  margin-top: 20px;
+  font-size: large;
+  color: #00a1a1;
+}
+.ant-select {
+  width: 100%;
+  border-radius: 0;
+}
+.ant-btn {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #309696;
+  color: white;
+  border: none;
+  border-radius: 0;
+}
+.ant-select-item-option-content > img,
+.ant-select-selection-item > img {
+  width: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 5px;
+}

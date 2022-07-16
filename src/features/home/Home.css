@@ -1,0 +1,25 @@
+.ant-tabs {
+  border: 1px solid rgb(228, 228, 228);
+  margin-top: 15px;
+  padding: 10px;
+}
+.ant-card-body {
+  padding-top: 0;
+}
+.ant-card-body > p {
+  text-align: left;
+  font-weight: bold;
+  font-size: 25px;
+  border-bottom: 1px solid rgb(222, 222, 222);
+}
+.ant-card-meta {
+  margin-bottom: 15px;
+}
+.ant-card-meta-avatar {
+  border-right: 1px solid rgb(228, 228, 228);
+  margin-right: 20px;
+}
+.ant-card-meta-avatar span {
+  width: 100px;
+  height: 100px;
+}

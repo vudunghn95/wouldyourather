@@ -1,0 +1,24 @@
+.ant-menu-title-content {
+  font-size: 30px;
+}
+.ant-menu {
+  justify-content: center;
+}
+.user-name > span {
+  font-size: 20px;
+}
+.user-name:active,
+.user-name:target,
+.user-name:focus,
+.user-name:hover {
+  color: rgb(13, 9, 12) !important;
+}
+.user-name::after {
+  display: none;
+}
+.user-name > span > img {
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 5px;
+}

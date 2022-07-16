@@ -1,14 +1,15 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import counterReducer from "../features/counter/counterSlice";
+import loginReducer from "../features/login/loginSlice";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./rootSaga";
 
 const sageMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
-  // including config redux thunk & redux dev tool
   reducer: {
     counter: counterReducer,
+    login: loginReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sageMiddleware),
