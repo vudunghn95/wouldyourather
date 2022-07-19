@@ -13,6 +13,7 @@ const initialState: LoginState = {
     id: "",
     name: "",
     answers: {},
+    questions: [],
   },
 };
 
@@ -25,6 +26,7 @@ export const loginSlice = createSlice({
         id: "",
         name: "",
         answers: {},
+        questions: [],
       };
       state.isAuth = false;
     },

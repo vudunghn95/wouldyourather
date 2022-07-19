@@ -3,6 +3,7 @@ export interface User {
   name: string;
   answers: IObjectKeys;
   avatarURL?: string;
+  questions: Array<object>;
 }
 
 export interface QuestionType {

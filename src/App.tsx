@@ -9,6 +9,7 @@ import Login from "features/login/Login";
 import Leader from "features/leader/Leader";
 import PrivateOutlet from "components/PrivateOutlet";
 import PollDetail from "features/polldetail/PollDetail";
+import NotFound from "components/NotFound";
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,7 @@ function App() {
               <Route path="" element={<Home />} />
             </Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </BrowserRouter>
