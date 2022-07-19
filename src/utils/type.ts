@@ -1,7 +1,7 @@
 export interface User {
   id: string;
   name: string;
-  answers: object;
+  answers: IObjectKeys;
   avatarURL?: string;
 }
 
@@ -14,7 +14,10 @@ export interface QuestionType {
   avatarURL?: string;
 }
 
-type Option = {
+export type Option = {
   text: string;
   votes: string[];
 };
+interface IObjectKeys {
+  [key: string]: string | number;
+}

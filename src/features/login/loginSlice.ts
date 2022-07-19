@@ -31,7 +31,6 @@ export const loginSlice = createSlice({
     auth: (state, action: PayloadAction<{ isAuth: boolean; user: User }>) => {
       state.isAuth = action.payload.isAuth;
       state.user = action.payload.user;
-      console.log("statestate", state.isAuth);
     },
   },
 });

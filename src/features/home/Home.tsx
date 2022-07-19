@@ -9,13 +9,12 @@ import { QuestionType } from "utils/type";
 import Question from "components/Question";
 const { TabPane } = Tabs;
 
-const onChange = (key: string) => {
-  console.log(key);
-};
+const onChange = (key: string) => {};
 function Home() {
   const [answered, setAnswered] = useState<QuestionType[]>([]);
   const [unAnswered, setUnAnswered] = useState<QuestionType[]>([]);
   const user = useAppSelector(selectUser);
+  console.log("useruseruseruseruser", user);
   useEffect(() => {
     async function getQuestions() {
       const users = await _getUsers();

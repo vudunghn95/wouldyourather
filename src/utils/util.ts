@@ -1,4 +1,4 @@
-import { _getUsers } from "_DATA";
+import { _getQuestions, _getUsers } from "_DATA";
 import { QuestionType, User } from "./type";
 
 export async function checkUser(id: string | null) {
@@ -32,4 +32,31 @@ export function filterAnsweredQuestionsByUser(
     answered,
     unAnswered,
   };
+}
+
+export async function getQuestionById(id: string, user: User) {
+  const { answers } = user;
+  const isAnswered = Object.keys(answers).includes(id);
+  const questions = await _getQuestions();
+  const users = await _getUsers();
+  let question: any = Object.values(questions).find((q: any) => q.id === id);
+  const author: any = Object.values(users).find(
+    (u: any) => u.id === question.author
+  );
+  question = {
+    ...question,
+    avatarURL: author.avatarURL,
+  };
+  return {
+    question,
+    isAnswered,
+  };
+}
+
+export async function getUserById(id: string) {
+  const users = await _getUsers();
+  const user: any = Object.values(users).find(
+    (u: any) => u.id === id
+  );
+  return user;
 }
