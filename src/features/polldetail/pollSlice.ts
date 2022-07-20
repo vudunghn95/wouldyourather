@@ -9,7 +9,7 @@ export interface PollState {
 
 const initialState: PollState = {
   question: {
-    id: "",
+    id: "123",
     author: "",
     avatarURL: "",
     optionOne: {

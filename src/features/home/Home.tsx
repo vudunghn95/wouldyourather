@@ -14,7 +14,6 @@ function Home() {
   const [answered, setAnswered] = useState<QuestionType[]>([]);
   const [unAnswered, setUnAnswered] = useState<QuestionType[]>([]);
   const user = useAppSelector(selectUser);
-  console.log("useruseruseruseruser", user);
   useEffect(() => {
     async function getQuestions() {
       const users = await _getUsers();

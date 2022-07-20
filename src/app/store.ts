@@ -1,7 +1,6 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import counterReducer from "../features/counter/counterSlice";
 import loginReducer from "../features/login/loginSlice";
-import pollReducer from "../features/polldetail/pollSlice"
+import pollReducer from "../features/polldetail/pollSlice";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./rootSaga";
 
@@ -9,9 +8,8 @@ const sageMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
     login: loginReducer,
-    pollDetail : pollReducer
+    pollDetail: pollReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sageMiddleware),

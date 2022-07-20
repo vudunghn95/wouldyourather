@@ -16,7 +16,7 @@ function Login() {
   const [users, setUsers] = useState<Users[]>([]);
   const navigate = useNavigate();
   const isAuth = useAppSelector(selectAuth);
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("Select User");
   const dispatch = useAppDispatch();
   const handleChange = (value: string) => {
     setSelected(value);
@@ -34,7 +34,7 @@ function Login() {
     }
     getUsers();
     if (isAuth) {
-      navigate("/");
+      navigate(-2);
     }
   }, [isAuth, navigate]);
   return (
@@ -44,7 +44,7 @@ function Login() {
     >
       <img src={require("../../images/loginIcon.png")} alt="Login" />
       <h3>Sign in</h3>
-      <Select defaultValue="Select User" onChange={handleChange}>
+      <Select onChange={handleChange} value={selected}>
         {users.map((user) => (
           <Option key={user.id} value={user.id}>
             <img src={user.avatarURL} alt="avatar" /> {user.name}

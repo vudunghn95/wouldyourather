@@ -4,7 +4,7 @@
 .ant-menu {
   justify-content: center;
 }
-.user-name > span {
+.user-name {
   font-size: 20px;
 }
 .user-name:active,
@@ -16,7 +16,7 @@
 .user-name::after {
   display: none;
 }
-.user-name > span > img {
+.user-name > img {
   width: 30px;
   object-fit: cover;
   border-radius: 50%;

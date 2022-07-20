@@ -1,7 +1,7 @@
 import { auth } from "features/login/loginSlice";
 import { call, put, take } from "redux-saga/effects";
 import { User } from "utils/type";
-import {  _saveQuestionAnswer } from "_DATA";
+import { _saveQuestionAnswer } from "_DATA";
 import { getQuestionById, getUserById } from "../../utils/util";
 import { updatePoll } from "./pollSlice";
 export function* getPollDetail() {
@@ -22,9 +22,9 @@ export function* answerPoll() {
     yield call(() => _saveQuestionAnswer(payload));
     const user: User = yield call(() => getUserById(authedUser));
     const { question, isAnswered } = yield call(() =>
-        getQuestionById(qid, user)
-      );
+      getQuestionById(qid, user)
+    );
     yield put(updatePoll({ question, isAnswered }));
-    yield put(auth({isAuth:true, user}));
+    yield put(auth({ isAuth: true, user }));
   }
 }

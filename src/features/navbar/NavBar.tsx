@@ -11,33 +11,36 @@ function NavBar() {
   const isAuth = useAppSelector(selectAuth);
   const user = useAppSelector(selectUser);
   const dispatch = useDispatch();
-
   const logOut = () => {
     dispatch(logout());
   };
-  return (
-    <Menu mode="horizontal">
-      <Menu.Item key="home">
-        <Link to="/">Home</Link>
-      </Menu.Item>
-      <Menu.Item key="add">
-        <Link to="/add">New Question</Link>
-      </Menu.Item>
-      <Menu.Item key="leader">
-        <Link to="/leaderboard">Leader Board</Link>
-      </Menu.Item>
-      {isAuth && (
-        <>
-          <Menu.Item className="user-name" key="user">
+  const items = [
+    { label: <Link to="/">Home</Link>, key: "home" },
+    { label: <Link to="/add">New Question</Link>, key: "add" },
+    { label: <Link to="/leaderboard">Leader Board</Link>, key: "leader" },
+  ];
+  if (isAuth) {
+    items.push(
+      {
+        label: (
+          <span className="user-name">
             {`Hello, ${user.name}`} <img src={user.avatarURL} alt="avatar" />
-          </Menu.Item>
-          <Menu.Item key="logout" className="user-name" onClick={logOut}>
+          </span>
+        ),
+        key: "user",
+      },
+      {
+        label: (
+          <span className="user-name" onClick={logOut}>
             Logout
-          </Menu.Item>
-        </>
-      )}
-    </Menu>
-  );
+          </span>
+        ),
+        key: "logout",
+      }
+    );
+  }
+
+  return <Menu mode="horizontal" items={items} />;
 }
 
 export default NavBar;
